@@ -1,6 +1,7 @@
 # hx.class
 环信PHP扩展操作类
-```
+```php
+//1.先将该方法贴到类中
 /**
  * 返回环信实例
  * @return HxController|bool
@@ -16,11 +17,7 @@ static public function ReturnHx(){
     return is_object($Hx) ? $Hx : false;
 }
 
-//使用方法
-$Hx = self::ReturnHx();
-$rows = $Hx->createUser('zhangsan','123456');
-
-//配置文件内容：
+//2.新建配置文件，名称叫Hx.cfg.php，配置文件内容：
 /**
  * 环信配置项
  */
@@ -36,4 +33,8 @@ return [
         'app_name'=>''
     ),
 ];
+
+//3.使用方法
+$Hx = self::ReturnHx();
+$rows = $Hx->createUser('zhangsan','123456');
 ```
